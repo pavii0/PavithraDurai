@@ -14,3 +14,65 @@ body {
 }
 
 /* Add in your own customisations */
+
+header {
+    background-color: #93d0f4;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header img {
+    width: 200px;
+    margin-top: 10px;
+}
+
+h1 {
+    color: white;
+    font-size: 1.5em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f2f2f2;
+}
+
+table, th, td{
+    border: 1px solid #ddd;
+}
+
+th, td{
+    padding: 10px;
+    text-align: left;
+
+}
+
+h2 {
+    color: #333;
+    margin: 20px 0px 10px;
+}
+
+footer {
+    background-color: #93d0f4;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    color: white;
+}
+
+a {
+    color: #0079c1;
+    text-decoration: none;
+
+}
+
+/* optional enhancements*/
+
+section {
+    margin-bottom: 30px;
+}
+
+
