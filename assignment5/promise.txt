@@ -1,0 +1,117 @@
+question 1:
+
+const p = Promise.resolve('resolved');
+
+p.then((value) => {
+    console.log(value); 
+});
+
+question 2:
+
+const p = Promise.reject(new Error('Oops!'))
+
+p.catch((value) => {
+    console.log(value)
+});
+
+question 3:
+
+const p = Promise.resolve({id: 1, name: 'Alice'});
+
+p.then((value) => {
+    console.log(value)
+});
+
+question 4:
+
+const p = Promise.resolve({ id: 1, name: 'Alice'});
+
+p.then((value) => {
+    console.log(value.name);
+});
+
+question 5:
+
+const p = Promise.reject(new Error('Invalid id'));
+
+p.catch((value) => {
+    console.log(value)
+});
+
+question 6:
+
+const p = Promise.resolve(42);
+
+p.then((value) => {
+    console.log("Resolved with:", value)
+});
+
+p.catch((error) => {
+    console.log("Rejected with:", error)
+});
+
+p.finally(() => { 
+    console.log("Promise completed")
+});
+
+question 7:
+
+const p = Promise.resolve(21);
+
+p.then((value) => {
+    console.log(value*2)
+});
+
+question 8:
+
+const p = Promise.reject(new Error('Invalid value'));
+
+p.catch((error) => {
+    console.log(0)
+});
+
+question 9:
+
+const promises = [
+  Promise.resolve(1),
+  Promise.resolve(2),
+  Promise.resolve(3)
+];
+
+Promise.all(promises)
+    .then((values) => {
+        console.log(values);
+    })
+    .catch((error) => {
+        console.log("One of the promises have failed:", error);
+    });
+
+question 10:
+
+const promises = [
+  new Promise(resolve => setTimeout(() => resolve('a'), 100)), 
+  new Promise(resolve => setTimeout(() => resolve('b'), 50)),
+  new Promise(resolve => setTimeout(() => resolve('c'), 150))
+];
+
+Promise.race(promises)
+    .then((value) => {
+        console.log(value);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+bonus question:
+
+const p = Promise.resolve('World');
+
+p.then((value) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('Hello ' + value);
+        }, 1000);
+    });
+}).then((finalValue) => {
+    console.log(finalValue);
+});
